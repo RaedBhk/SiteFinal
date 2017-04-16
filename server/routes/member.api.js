@@ -6,7 +6,7 @@ const router = express.Router();
 
 /* GET api listing. */
 router.get('/', function (req, res) {
-  res.send('Smart Parking api works');
+  return res.send('Labo api works');
 });
 
 //http://mongoosejs.com/docs/2.7.x/docs/finding-documents.html
@@ -24,6 +24,7 @@ router.route('/member')
       member.email = req.body.email;
       member.firstName = req.body.firstName;
       member.lastName = req.body.lastName;
+      member.grade = req.body.grade;
       member.homepage = req.body.homepage;
       member.phone = req.body.phone;
       member.thesis = req.body.thesis;
@@ -54,7 +55,7 @@ router.route('/member/:_id')
   .get(function (req, res) {
     Member.findById(req.params._id, function (err, member) {
       if (err)
-        res.send(err);
+        return res.send(err);
       res.status(200).json({message: 'Member : ' + req.params._id, data: member});
     }).populate('articles socials thesis');
   })

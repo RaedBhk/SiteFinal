@@ -6,7 +6,7 @@ import { ContactComponent } from "./contact/contact.component";
 import { MemberComponent } from "./member/member.component";
 var APP_ROUTES = [
     { path: '', component: HomeComponent },
-    { path: 'member', component: MemberComponent },
+    { path: 'member/:id', component: MemberComponent },
     { path: 'team', component: TeamComponent },
     { path: 'events', component: EventsComponent },
     { path: 'contact', component: ContactComponent }

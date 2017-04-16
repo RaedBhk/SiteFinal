@@ -6,7 +6,7 @@ var Schema = mongoose.Schema;
 
 var ArticleSchema = new Schema({
   _articleId: String,
-  authors: {type: Schema.Types.Mixed},
+  authors: [String],
   title: String,
   date: Date,
   url: String,

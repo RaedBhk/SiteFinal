@@ -17,6 +17,9 @@ export var MemberService = (function () {
     MemberService.prototype.getMembers = function () {
         return this.http.get('http://localhost:3000/api/member').map(function (res) { return res.json(); });
     };
+    MemberService.prototype.getMemberById = function (id) {
+        return this.http.get('http://localhost:3000/api/member/' + id).map(function (res) { return res.json(); });
+    };
     MemberService = __decorate([
         Injectable(), 
         __metadata('design:paramtypes', [Http])

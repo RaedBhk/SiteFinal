@@ -9,13 +9,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { Component } from '@angular/core';
 import { MemberService } from "../member.service";
+import { Router, ActivatedRoute } from "@angular/router";
 export var MemberComponent = (function () {
-    function MemberComponent(memberService) {
+    function MemberComponent(memberService, router, route) {
         this.memberService = memberService;
+        this.router = router;
+        this.route = route;
     }
     MemberComponent.prototype.ngOnInit = function () {
-        this.memberService.getMembers().subscribe(function (posts) {
+        var _this = this;
+        this.sub = this.route.params.subscribe(function (params) {
+            _this.id = params['id'];
+            console.log(_this.id);
+            _this.member = _this.memberService.getMemberById(_this.id).subscribe(function (member) {
+                _this.member = member.data;
+                console.log(member);
+            });
         });
+    };
+    MemberComponent.prototype.ngOnDestroy = function () {
+        this.sub.unsubscribe();
     };
     MemberComponent = __decorate([
         Component({
@@ -23,7 +36,7 @@ export var MemberComponent = (function () {
             templateUrl: './member.component.html',
             styleUrls: ['./member.component.css']
         }), 
-        __metadata('design:paramtypes', [MemberService])
+        __metadata('design:paramtypes', [MemberService, Router, ActivatedRoute])
     ], MemberComponent);
     return MemberComponent;
 }());

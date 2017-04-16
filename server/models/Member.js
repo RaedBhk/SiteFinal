@@ -15,7 +15,7 @@ var MemberSchema = new Schema({
   thesis: [{ type: Schema.Types.Mixed, ref: 'Thesis' }],
   researchFileds : String,
   resume: String,
-  socials: [{ type: Schema.Types.ObjectId, ref: 'Social' }],
+  socials: { type: Schema.Types.ObjectId, ref: 'Social' },
   articles: [{ type: Schema.Types.Mixed, ref: 'Article' }]
 });
 

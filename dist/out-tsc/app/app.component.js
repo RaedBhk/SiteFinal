@@ -20,7 +20,7 @@ export var AppComponent = (function () {
         Component({
             selector: 'app-root',
             templateUrl: './app.component.html',
-            styleUrls: ['../assets/css/styles.css', '../assets/css/demo5.css', '../assets/css/vendors/vendors.css', '../assets/css/vendors/vendors-overwrites.css']
+            styleUrls: ['../assets/css/styles.css', '../assets/css/demo5.css', '../assets/css/vendors/vendors.css', '../assets/css/vendors/vendors-overwrites.css', '../assets/css/main.css']
         }), 
         __metadata('design:paramtypes', [MemberService])
     ], AppComponent);

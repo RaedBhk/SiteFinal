@@ -6,21 +6,20 @@
           <div class="col-xs-6 col-md-4" *ngFor="let member of members">
             <div class="vc-card boxed">
               <a href="#"><img src="assets/img/people/01.jpg" alt="people"></a>
-              <div class="vc-card-wrapper"><a href="#" class="title">{{ member.email }}</a>
-                <div class="subtitle">{{ member.phone }}</div>
+              <div class="vc-card-wrapper"><a [routerLink]="['/member',member._id]" routerLinkActive="active" class="title">{{ member.firstName + ' ' + member.lastName }}</a>
+                <div class="subtitle">{{ member.grade }}</div>
               </div>
               <div class="links">
-                <a href="#" data-toggle="tooltip" data-original-title="Google+"><i class="oli oli-googleplus"></i></a><a href="#" data-toggle="tooltip"
-                                                                                                                         data-original-title="Linedin"><i class="oli oli-linkedin"></i></a>
-                <a
-                        href="#" data-toggle="tooltip" data-original-title="Facebook"><i class="oli oli-facebook"></i></a><a href="#" data-toggle="tooltip"
-                                                                                                                             data-original-title="Twitter"><i class="oli oli-twitter"></i></a></div>
+                <a [href]="member.socials.google" data-toggle="tooltip" data-original-title="Google+"><i class="oli oli-googleplus"></i></a>
+                <a [href]="member.socials.linkedin" data-toggle="tooltip" data-original-title="Linedin"><i class="oli oli-linkedin"></i></a>
+                <a [href]="member.socials.facebook" data-toggle="tooltip" data-original-title="Facebook"><i class="oli oli-facebook"></i></a>
+                <a [href]="member.socials.twitter" data-toggle="tooltip" data-original-title="Twitter"><i class="oli oli-twitter"></i></a></div>
             </div>
           </div>
           <div class="col-xs-6 col-md-4">
             <div class="vc-card boxed">
               <a href="#"><img src="assets/img/people/02.jpg" alt="people"></a>
-              <div class="vc-card-wrapper"><a href="#" class="title">Dr. Celestine Wilfred</a>
+              <div class="vc-card-wrapper"><a [routerLink]="['/member','123' ]" routerLinkActive="active" class="title">Dr. Celestine Wilfred</a>
                 <div class="subtitle">Founder & CEO</div>
               </div>
               <div class="links">
@@ -48,133 +47,21 @@
           <div class="col-xs-6 col-md-4">
             <div class="vc-card boxed">
               <a href="#"><img src="assets/img/people/04.jpg" alt="people"></a>
-              <div class="vc-card-wrapper"><a href="#" class="title">Dr. Quinlan Granville</a>
-                <div class="subtitle">Associate Dean</div>
+              <div class="vc-card-wrapper"><a href="#" class="title">John Mcckay</a>
+                <div class="subtitle">Senior Partner</div>
               </div>
               <div class="links">
-                <a href="#" data-toggle="tooltip" data-original-title="Google+"><i class="oli oli-googleplus"></i></a><a href="#" data-toggle="tooltip"
-                                                                                                                         data-original-title="Linedin"><i class="oli oli-linkedin"></i></a>
+                <a href="#" data-toggle="tooltip" data-original-title="homepage"><i class="fa fa-external-link"></i></a><a href="#" data-toggle="tooltip"
+                                                                                                                           data-original-title="Biography"><i class="oli oli-user_male_circle"></i></a>
                 <a
-                        href="#" data-toggle="tooltip" data-original-title="Facebook"><i class="oli oli-facebook"></i></a><a href="#" data-toggle="tooltip"
-                                                                                                                             data-original-title="Twitter"><i class="oli oli-twitter"></i></a></div>
-            </div>
-          </div>
-          <div class="col-xs-6 col-md-4">
-            <div class="vc-card boxed">
-              <a href="#"><img src="assets/img/people/05.jpg" alt="people"></a>
-              <div class="vc-card-wrapper"><a href="#" class="title">Dr.Prof. Mick Roscoe</a>
-                <div class="subtitle">Associate Dean</div>
-              </div>
-              <div class="links">
-                <a href="#" data-toggle="tooltip" data-original-title="Google+"><i class="oli oli-googleplus"></i></a><a href="#" data-toggle="tooltip"
-                                                                                                                         data-original-title="Linedin"><i class="oli oli-linkedin"></i></a>
-                <a
-                        href="#" data-toggle="tooltip" data-original-title="Facebook"><i class="oli oli-facebook"></i></a><a href="#" data-toggle="tooltip"
-                                                                                                                             data-original-title="Twitter"><i class="oli oli-twitter"></i></a></div>
-            </div>
-          </div>
-          <div class="col-xs-6 col-md-4">
-            <div class="vc-card boxed">
-              <a href="#"><img src="assets/img/people/06.jpg" alt="people"></a>
-              <div class="vc-card-wrapper"><a href="#" class="title">Dr. Tristram Jack</a>
-                <div class="subtitle">Associate Dean</div>
-              </div>
-              <div class="links">
-                <a href="#" data-toggle="tooltip" data-original-title="Google+"><i class="oli oli-googleplus"></i></a><a href="#" data-toggle="tooltip"
-                                                                                                                         data-original-title="Linedin"><i class="oli oli-linkedin"></i></a>
-                <a
-                        href="#" data-toggle="tooltip" data-original-title="Facebook"><i class="oli oli-facebook"></i></a><a href="#" data-toggle="tooltip"
-                                                                                                                             data-original-title="Twitter"><i class="oli oli-twitter"></i></a></div>
-            </div>
-          </div>
-          <div class="col-xs-6 col-md-4">
-            <div class="vc-card boxed">
-              <a href="#"><img src="assets/img/people/07.jpg" alt="people"></a>
-              <div class="vc-card-wrapper"><a href="#" class="title">Dr.Prof. John Doe</a>
-                <div class="subtitle">Associate Dean, physics head</div>
-              </div>
-              <div class="links">
-                <a href="#" data-toggle="tooltip" data-original-title="Google+"><i class="oli oli-googleplus"></i></a><a href="#" data-toggle="tooltip"
-                                                                                                                         data-original-title="Linedin"><i class="oli oli-linkedin"></i></a>
-                <a
-                        href="#" data-toggle="tooltip" data-original-title="Facebook"><i class="oli oli-facebook"></i></a><a href="#" data-toggle="tooltip"
-                                                                                                                             data-original-title="Twitter"><i class="oli oli-twitter"></i></a></div>
-            </div>
-          </div>
-          <div class="col-xs-6 col-md-4">
-            <div class="vc-card boxed">
-              <a href="#"><img src="assets/img/people/08.jpg" alt="people"></a>
-              <div class="vc-card-wrapper"><a href="#" class="title">Dr.Prof. Jane Doe</a>
-                <div class="subtitle">Associate Dean</div>
-              </div>
-              <div class="links">
-                <a href="#" data-toggle="tooltip" data-original-title="Google+"><i class="oli oli-googleplus"></i></a><a href="#" data-toggle="tooltip"
-                                                                                                                         data-original-title="Linedin"><i class="oli oli-linkedin"></i></a>
-                <a
-                        href="#" data-toggle="tooltip" data-original-title="Facebook"><i class="oli oli-facebook"></i></a><a href="#" data-toggle="tooltip"
-                                                                                                                             data-original-title="Twitter"><i class="oli oli-twitter"></i></a></div>
-            </div>
-          </div>
-          <div class="col-xs-6 col-md-4">
-            <div class="vc-card boxed">
-              <a href="#"><img src="assets/img/people/01.jpg" alt="people"></a>
-              <div class="vc-card-wrapper"><a href="#" class="title">Dr.Prof. Kerr Waylon</a>
-                <div class="subtitle">Dean</div>
-              </div>
-              <div class="links">
-                <a href="#" data-toggle="tooltip" data-original-title="Google+"><i class="oli oli-googleplus"></i></a><a href="#" data-toggle="tooltip"
-                                                                                                                         data-original-title="Linedin"><i class="oli oli-linkedin"></i></a>
-                <a
-                        href="#" data-toggle="tooltip" data-original-title="Facebook"><i class="oli oli-facebook"></i></a><a href="#" data-toggle="tooltip"
-                                                                                                                             data-original-title="Twitter"><i class="oli oli-twitter"></i></a></div>
-            </div>
-          </div>
-          <div class="col-xs-6 col-md-4">
-            <div class="vc-card boxed">
-              <a href="#"><img src="assets/img/people/02.jpg" alt="people"></a>
-              <div class="vc-card-wrapper"><a href="#" class="title">Dr. Celestine Wilfred</a>
-                <div class="subtitle">Head of Human Resource</div>
-              </div>
-              <div class="links">
-                <a href="#" data-toggle="tooltip" data-original-title="Google+"><i class="oli oli-googleplus"></i></a><a href="#" data-toggle="tooltip"
-                                                                                                                         data-original-title="Linedin"><i class="oli oli-linkedin"></i></a>
-                <a
-                        href="#" data-toggle="tooltip" data-original-title="Facebook"><i class="oli oli-facebook"></i></a><a href="#" data-toggle="tooltip"
-                                                                                                                             data-original-title="Twitter"><i class="oli oli-twitter"></i></a></div>
-            </div>
-          </div>
-          <div class="col-xs-6 col-md-4">
-            <div class="vc-card boxed">
-              <a href="#"><img src="assets/img/people/03.jpg" alt="people"></a>
-              <div class="vc-card-wrapper"><a href="#" class="title">Dr.Prof. Woody Terence</a>
-                <div class="subtitle">Associate Dean, marketting</div>
-              </div>
-              <div class="links">
-                <a href="#" data-toggle="tooltip" data-original-title="Google+"><i class="oli oli-googleplus"></i></a><a href="#" data-toggle="tooltip"
-                                                                                                                         data-original-title="Linedin"><i class="oli oli-linkedin"></i></a>
-                <a
-                        href="#" data-toggle="tooltip" data-original-title="Facebook"><i class="oli oli-facebook"></i></a><a href="#" data-toggle="tooltip"
-                                                                                                                             data-original-title="Twitter"><i class="oli oli-twitter"></i></a></div>
-            </div>
-          </div>
-          <div class="col-xs-6 col-md-4">
-            <div class="vc-card boxed">
-              <a href="#"><img src="assets/img/people/04.jpg" alt="people"></a>
-              <div class="vc-card-wrapper"><a href="#" class="title">Dr. Quinlan Granville</a>
-                <div class="subtitle">Associate Dean</div>
-              </div>
-              <div class="links">
-                <a href="#" data-toggle="tooltip" data-original-title="Google+"><i class="oli oli-googleplus"></i></a><a href="#" data-toggle="tooltip"
-                                                                                                                         data-original-title="Linedin"><i class="oli oli-linkedin"></i></a>
-                <a
-                        href="#" data-toggle="tooltip" data-original-title="Facebook"><i class="oli oli-facebook"></i></a><a href="#" data-toggle="tooltip"
-                                                                                                                             data-original-title="Twitter"><i class="oli oli-twitter"></i></a></div>
+                        href="#" data-toggle="tooltip" data-original-title="Facebook"><i class="fa fa-facebook"></i></a><a href="#" data-toggle="tooltip"
+                                                                                                                           data-original-title="Twitter"><i class="fa fa-twitter"></i></a></div>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <section data-img-src="assets/img/bg/15.jpg" alt="background" class="section parallax-layer dark-wrapper ov-dark-alpha-60">
+    <section alt="background" class="section parallax-layer dark-wrapper ov-dark-alpha-60">
       <div class="container">
         <div class="row call-out tb-vcenter-wrapper">
           <div class="col-sm-8 vcenter">

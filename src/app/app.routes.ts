@@ -7,7 +7,7 @@ import {MemberComponent} from "./member/member.component";
 
 const APP_ROUTES:Routes=[
     { path:'',component:HomeComponent},
-    { path:'member',component:MemberComponent},
+    { path:'member/:id',component:MemberComponent},
     { path:'team', component:TeamComponent},
     { path:'events', component:EventsComponent},
     { path:'contact', component:ContactComponent}
