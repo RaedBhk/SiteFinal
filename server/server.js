@@ -9,6 +9,8 @@ const cors = require('cors');
 const articleRouter = require('./routes/article.api');
 const memberRouter = require('./routes/member.api');
 const socialRouter = require('./routes/social.api');
+const studentRouter = require('./routes/student.api');
+const thesisRouter = require('./routes/thesis.api');
 
 const app = express();
 
@@ -35,6 +37,8 @@ app.use(function(req, res, next) {
 app.use('/api', articleRouter);
 app.use('/api', memberRouter);
 app.use('/api', socialRouter);
+app.use('/api', studentRouter);
+app.use('/api', thesisRouter);
 
 app.use(cors());
 

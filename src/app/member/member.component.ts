@@ -14,8 +14,6 @@ export class MemberComponent implements OnInit {
 
   ngOnInit() {
     this.memberService.getMembers().subscribe( (posts) => {
-      console.log('aaa');
-      console.log(posts);
     });
   }
 

@@ -1,3 +1,6 @@
+/**
+ * Created by mahdi on 09/04/17.
+ */
 const express = require('express');
 const router = express.Router();
 
@@ -17,15 +20,17 @@ router.route('/member')
 
     var member = new Member();
 
-    member._memberId = req.body._userId;
-    member.email = req.body.email;
-    member.homepage = req.body.homepage;
-    member.phone = req.body.phone;
-    member.thesis = req.body.thesis;
-    member.researchFileds = req.body.researchFileds;
-    member.resume = req.body.resume;
-    member.socials = req.body.socials;
-    member.articles = req.body.articles;
+      member._memberId = req.body._memberId;
+      member.email = req.body.email;
+      member.firstName = req.body.firstName;
+      member.lastName = req.body.lastName;
+      member.homepage = req.body.homepage;
+      member.phone = req.body.phone;
+      member.thesis = req.body.thesis;
+      member.researchFileds = req.body.researchFileds;
+      member.resume = req.body.resume;
+      member.socials = req.body.socials;
+      member.articles = req.body.articles;
 
     console.log(JSON.stringify(member));
 
@@ -42,7 +47,7 @@ router.route('/member')
       if (err)
         res.send(err);
       res.status(200).json({message: 'Member', data: members});
-    }).populate('articles');
+    }).populate('articles socials thesis');
 
   });
 router.route('/member/:_id')
@@ -51,7 +56,7 @@ router.route('/member/:_id')
       if (err)
         res.send(err);
       res.status(200).json({message: 'Member : ' + req.params._id, data: member});
-    });
+    }).populate('articles socials thesis');
   })
   .delete(function (req, res) {
     Member.remove({

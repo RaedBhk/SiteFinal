@@ -15,8 +15,6 @@ export var MemberComponent = (function () {
     }
     MemberComponent.prototype.ngOnInit = function () {
         this.memberService.getMembers().subscribe(function (posts) {
-            console.log('aaa');
-            console.log(posts);
         });
     };
     MemberComponent = __decorate([
